@@ -1,0 +1,21 @@
+{
+  "response": [
+    {
+      "maintainer": "0xSoul",
+      "oem": "Google",
+      "device": "Pixel 4",
+      "filename": "EvolutionX-14.0-20240718-flame-v9.2-Unofficial.zip",
+      "download": "https://sourceforge.net/projects/evolutionx-floral/files/flame/14/EvolutionX-14.0-20240718-flame-v9.2-Unofficial.zip/download",
+      "timestamp": 1721297200,
+      "md5": "5836d7170811d69f61b929576811087a",
+      "sha256": "b89e6554c9175ecfcddb6512bd67431cb035d2fd9281b0f690436dd658dda44d",
+      "size": 2303102817,
+      "version": "9.2",
+      "buildtype": "Release",
+      "forum": "https://xdaforums.com/t/rom-unofficial-wireguard-kernelsu-evolution-x-9-0-pixel-4-4xl-floral-27-05-2024.4670812/",
+      "firmware": "TP1A.221005.002.B2",
+      "paypal": "https://PayPal.me/0xSoul",
+      "telegram": "https://telegram.me/EvoX9Unofficial"
+    }
+  ]
+}
