@@ -1,4 +1,0 @@
-Evolution X 9.2
-Merge July 2024 security patches    
-Update firmware and blobs to AP2A.240705.004
-Ship saturation activity/fragment of PixelParts

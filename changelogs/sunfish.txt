@@ -1,3 +1,0 @@
-20240710
-- Initial release of LOS based
-- July 2024 security patches

@@ -1,2 +1,0 @@
-Remove extra battery styles for now
-Fix circle to search
