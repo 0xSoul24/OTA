@@ -1,14 +1,44 @@
-Evolution X 9.2
-Merge July 2024 security patches
-Ship saturation activity/fragment of PixelParts
-Update PIF (RCS fixed)
-Gcam pulled from stock during TP1A.221005.002.B2 firmware/vendor extraction
-Add GoogleCamera_6gb_or_more_ram.xml
-Add brightness slider styles
-Add QS panel styles
-Add QS tile styles
-Add QS rows/columns customizations
-Add QQS rows portrait/landscape customizations
-Add more QS battery styles
-Add a few more developer options to Settings > Evolver > Miscellaneous
-Expose clear calling 
+- LineageOS-based source. Signed build.
+- Clean flash is required if coming from March 2024 or older builds.
+- Re-Install boot.img (https://sourceforge.net/projects/evolutionx-floral/files/flame/boot/boot.img/download) for root.
+- Play Integrity passes, RCS works (As of 07/26/2024).
+
+Device changes:
+==============================
+None
+
+Notable ROM changes:
+==============================
+AudioService: do not block focus request from applications compiled with lower version sdks
+Avoid device reboot caused by SecurityException
+Bring back GameSpace support
+BubbleStackView: Fix java code parsing error
+CSD: Remove bluetooth a2dp devices for safe volume index devices
+Evolver: Bring back Less boring heads up option
+Evolver: Bring back Pulse visualizer
+Evolver: Move in status bar battery preferences from LineageParts
+Evolver: Remove additional Battery styles customizations (FIXES CIRCLE TO SEARCH)
+Fix network can't handle simultaneously SS request for both subs
+Scale PS4/PS5 controller touchpad input
+Settings: Add Bluetooth/Wi-Fi timeout feature
+Settings: Add Game Space support
+Settings: Add Market Name to device info
+Settings: Add a DEVICE field to the getSummary() function
+Settings: Allow scheduling always on display
+Settings: Bring back BT/Wifi timeout
+Settings: Expose radio info (*#*#4636#*#*)
+Settings: Hide radio info if device don't support voice
+Settings: Introduce AutoDimService
+Settings: fix unexpected routing selection
+SystemUI: Fix systemui crash when checking headups whitelist packages
+SystemUI: Move bluetooth dialog creation to LongClick method
+SystemUIGoogle: Adapt after gestural navigation API changes
+Update the icon for the adb wireless pairing code preference
+apns: Update Claro Ecuador APN
+base: add API for disabling gestural navigation
+display: Don't reset brightness adjustment on clearUserDataPoints()
+fixup! Settings: Use marketname for App Aspect Ratio summary
+Evolver: Update translations
+fixup! Allow to suppress notifications sound/vibration if screen is ON
+recovery: minui: Support secondary framebuffers
+releasetools: Don't compress with brotli
