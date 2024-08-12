@@ -1,18 +1,18 @@
 {
   "response": [
     {
-      "maintainer": "0xSoul",
+      "maintainer": "Cristhian Zeas (0xSoul)",
       "oem": "Google",
       "device": "Pixel 4",
-      "filename": "EvolutionX-14.0-20240807-flame-v9.2-Unofficial.zip",
-      "download": "https://sourceforge.net/projects/evolutionx-floral/files/flame/EvolutionX-14.0-20240807-flame-v9.2-Unofficial.zip/download",
-      "timestamp": 1723057272,
-      "md5": "ea6a9bd7b84d1d076b8bbbf8ddf05a2d",
-      "sha256": "cdfedce3f776771cf8d03d9e4d1e1785be1c7818bbcd2112b16298f7e6382587",
-      "size": 2301837021,
-      "version": "9.2",
+      "filename": "EvolutionX-14.0-20240809-flame-v9.3-Unofficial.zip",
+      "download": "https://sourceforge.net/projects/evolutionx-floral/files/flame/EvolutionX-14.0-20240809-flame-v9.3-Unofficial.zip/download",
+      "timestamp": 1723239648,
+      "md5": "b3a3bc7002b44ac09b2328e6f518ff5a",
+      "sha256": "43ac9baa791f1d9178fd00af888d70925f53e918a7a89ba172cd3180f23eed0c",
+      "size": 2301864400,
+      "version": "9.3",
       "buildtype": "Release",
-      "forum": "https://xdaforums.com/t/rom-wireguard-kernelsu-evolution-x-9-2-pixel-4-4xl-floral-unofficial-07-26-2024.4670812/",
+      "forum": "https://xdaforums.com/t/rom-wireguard-kernelsu-evolution-x-9-3-pixel-4-4xl-floral-unofficial-08-09-2024.4670812/",
       "firmware": "TP1A.221005.002.B2",
       "paypal": "https://PayPal.me/0xSoul",
       "telegram": "https://telegram.me/EvoX9Unofficial"
