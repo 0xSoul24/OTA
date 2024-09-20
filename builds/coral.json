@@ -4,18 +4,19 @@
       "maintainer": "Cristhian Zeas (0xSoul)",
       "oem": "Google",
       "device": "Pixel 4 XL",
-      "filename": "EvolutionX-14.0-20240913-coral-v9.4-Unofficial.zip",
-      "download": "https://sourceforge.net/projects/evolutionx-floral/files/coral/EvolutionX-14.0-20240913-coral-v9.4-Unofficial.zip/download",
-      "timestamp": 1726247115,
-      "md5": "66de42320c6e90025bca09c29ceb55f5",
-      "sha256": "603d144a6c9fe8ce93d2bb11962bf5d5ea828329f3d5d0256fad01ae18bb0333",
-      "size": 2394626789,
+      "filename": "EvolutionX-14.0-20240920-coral-v9.4-Unofficial.zip",
+      "download": "https://sourceforge.net/projects/evolutionx-floral/files/coral/EvolutionX-14.0-20240920-coral-v9.4-Unofficial.zip/download",
+      "timestamp": 1726863751,
+      "md5": "bc388a757dce5ea0f48494fb637acede",
+      "sha256": "cad6dadc6f62f6a1ddd6ffee70afd36832e54d87bf0933fed730214397aed503",
+      "size": 2394788941,
       "version": "9.4",
       "buildtype": "Release",
       "forum": "https://xdaforums.com/t/rom-wireguard-kernelsu-evolution-x-9-3-pixel-4-4xl-floral-unofficial-08-09-2024.4670790/",
-      "firmware": "TP1A.221005.002.B2",
+      "firmware": "https://dl.google.com/dl/android/aosp/coral-tp1a.221005.002.b2-factory-db99b1f8.zip",
       "paypal": "https://PayPal.me/0xSoul",
-      "telegram": "https://telegram.me/EvoX9Unofficial"
+      "telegram": "https://telegram.me/EvoX9Unofficial",
+      "github": "0xSoul24"
     }
   ]
 }
