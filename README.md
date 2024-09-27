@@ -18,7 +18,7 @@
       "firmware": "https://firmware link",
       "paypal": "https://donation link",
       "telegram": "https://telegram link",
-      "github": "(Github username)"
+      "github": "(GitHub username)"
     }
   ]
 }
