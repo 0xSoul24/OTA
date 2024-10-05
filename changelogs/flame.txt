@@ -5,7 +5,7 @@ Notes:
 - KernelSU included for root out of the box.
 - Make sure to be on latest Pixel firmware first.
 - Clean flash is required if coming from March 2024 or older builds.
-- Play Integrity passes, RCS works (As of 09/20/2024).
+- Play Integrity passes, RCS works (As of 10/04/2024).
 - Includes Google camera.
 
 Device changes:
@@ -14,10 +14,17 @@ None
 
 Notable ROM changes:
 ==============================
-Disable debug logging on non-eng builds
-Fix PackageManager#getPackageArchiveInfo to cache derived fields
-Settings: Whitelist WRITE_DEVICE_CONFIG permission
-apns: Update Brazil carriers to 2024
-extras: Update BCR to Version 1.71
-fixup! MobileSignalController: Prevent possible memory leak
-Evolver: New translations
+BatteryMeterView: Battery icon available by default
+BatteryStyles: Handle visibility from controller only
+Update translations
+Updater: Fix broken download ETA/progress
+apn: Add BSNL 4G APN config
+apn: Add Congstar (Telekom)
+apn: Add Truphone (Saily)
+apn: Use the proper settings for SFR (MCC 208 with MNC 10)
+apn: some fixes for Bouygues Telecom
+apns: Update apn config for Tinkoff Mobile
+certification: 10/04/2024 Update
+extras: BlackTheme: Affect more background colors
+extras: BlackTheme: Rework shades of system container
+vars: remove fbpk_version and wifi_only
