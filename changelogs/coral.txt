@@ -1,0 +1,26 @@
+This is Android 15 QPR2 with June 2025 security patches
+
+Notes:
+==============================
+- LineageOS-based source. Signed build.
+- Make sure to be on Pixel firmware first.
+- Update boot and dtbo manually in fastboot if you are comming from QPR1
+- Always dirty flash at your own risk. If your device bootloops, revert to an older build that boots.
+- Install Magisk, APatch or KernelSU-Next (https://pub-2c4d2194db29481fb665c4328f7163e9.r2.dev/KernelSU-Next.img) for root.
+- Play Integrity spoofing is back with keybox support
+- Includes Google camera.
+
+Device changes:
+==============================
+floral: apktool_patch() no longer takes custom arguments
+Updated KernelSU-Next to v1.0.9
+coral: Regenerate with latest extract-utils
+Use DeviceIntelligenceNetworkPrebuilt from GMS instead of device's vendor
+
+Notable ROM changes:
+==============================
+createjson: Remove sourceforge key and add extra_images
+CompositionEngine: Request device composition for the Udfps dim layer
+services: Move uses_miui_camera_defaults to select()
+Revert "Clear up the obsoleted cascading signal strength polling logic"
+disable memory tagging for surfaceflinger
