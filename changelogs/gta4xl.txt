@@ -1,4 +1,0 @@
-====== Evolution X 11.0 (Baklava) ========
-- You are  NOT required to clean flash for first build only
-- You can use any recovery to flash
-- Signed with new keys

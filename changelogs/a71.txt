@@ -1,3 +1,0 @@
-- Update build 20250110
-- Add GameBar, Enhanced HDR brightness and Display Saturation Feature, 
-- Upstream Kernel to 4.14.356
