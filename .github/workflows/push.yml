@@ -4,18 +4,13 @@ on:
   push:
     branches:
       - bka
-      - udc
-      - vic
-      - bka-vanilla
-      - udc-vanilla
-      - vic-vanilla
   pull_request:
     types:
       - closed
 
 jobs:
   process-json-files:
-    if: github.repository == 'Evolution-X/OTA'
+    if: github.repository == '0xSoul24/OTA'
     runs-on: ubuntu-latest
 
     steps:
@@ -33,12 +28,8 @@ jobs:
       - name: Process JSON files if files changed in builds folder.
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:
-          BKA_WEBHOOK: ${{ secrets.BKA_WEBHOOK }}
-          VIC_WEBHOOK: ${{ secrets.VIC_WEBHOOK }}
-          UDC_WEBHOOK: ${{ secrets.UDC_WEBHOOK }}
-          BKA_VANILLA_WEBHOOK: ${{ secrets.BKA_VANILLA_WEBHOOK }}
-          VIC_VANILLA_WEBHOOK: ${{ secrets.VIC_VANILLA_WEBHOOK }}
-          UDC_VANILLA_WEBHOOK: ${{ secrets.UDC_VANILLA_WEBHOOK }}
+          TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           ALL_CHANGED_FILES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
         run: |
           echo "Checking if JSON and TXT files are matching..."

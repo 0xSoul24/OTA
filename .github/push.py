@@ -3,19 +3,17 @@ from datetime import datetime
 import os
 import sys
 import json
+from io import BytesIO
+from urllib.parse import urlparse
 
 file_path = sys.argv[1]
 
-bka_webhook = os.environ["BKA_WEBHOOK"]
-udc_webhook = os.environ["UDC_WEBHOOK"]
-udc_vanilla_webhook = os.environ["UDC_VANILLA_WEBHOOK"]
-bka_vanilla_webhook = os.environ["BKA_VANILLA_WEBHOOK"]
-vic_webhook = os.environ["VIC_WEBHOOK"]
-vic_vanilla_webhook = os.environ["VIC_VANILLA_WEBHOOK"]
+telegram_to = os.environ["TELEGRAM_TO"]
+telegram_token = os.environ["TELEGRAM_TOKEN"]
 
 def get_commit_hash(branch, codename):
     path = f"changelogs/{codename}.txt"
-    api_url = f"https://api.github.com/repos/Evolution-X/OTA/commits?path={path}&sha={branch}"
+    api_url = f"https://api.github.com/repos/0xSoul24/OTA/commits?path={path}&sha={branch}"
     response = requests.get(api_url)
     response.raise_for_status()
     commits = response.json()
@@ -39,7 +37,10 @@ def parse_device():
         download_link = response[0]["download"]
         xda_thread = response[0]["forum"]
         github = response[0]["github"]
-    return filename, codename, oem, device, maintainer, version, build_date, file_size, download_link, xda_thread, github
+        md5 = response[0]["md5"]
+        sha256 = response[0]["sha256"]
+        initial_installation_images = response[0]["initial_installation_images"]
+    return filename, codename, oem, device, maintainer, version, build_date, file_size, download_link, xda_thread, github, md5, sha256, initial_installation_images
 
 def humanize(num, suffix='B'):
     for unit in ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z']:
@@ -48,86 +49,77 @@ def humanize(num, suffix='B'):
         num /= 1024.0
     return f"{num:.1f}Yi{suffix}"
 
-def webhook_send():
-    filename, codename, oem, device, maintainer, version, build_date, file_size, download_link, xda_thread, github = parse_device()
+def telegram_send():
+    filename, codename, oem, device, maintainer, version, build_date, file_size, download_link, xda_thread, github, md5, sha256, initial_installation_images = parse_device()
     
-    # Extract only the branch name from GITHUB_REF, default to 'vic'
-    branch = os.environ.get("GITHUB_REF", "refs/heads/vic").split("/")[-1]
+    # Extract only the branch name from GITHUB_REF, default to 'bka'
+    branch = os.environ.get("GITHUB_REF", "refs/heads/bka").split("/")[-1]
     commit_hash = get_commit_hash(branch, codename)
-    
-    if "Vanilla" in filename and "11." in version:
-        webhook_url = bka_vanilla_webhook
-    if "Vanilla" in filename and "10." in version:
-        webhook_url = vic_vanilla_webhook
-    if "Vanilla" in filename and "9." in version:
-        webhook_url = udc_vanilla_webhook
-    if "Vanilla" not in filename and "11." in version:
-        webhook_url = bka_webhook
-    if "Vanilla" not in filename and "10." in version:
-        webhook_url = vic_webhook
-    if "Vanilla" not in filename and "9." in version:
-        webhook_url = udc_webhook
 
     has_xda_thread = xda_thread and xda_thread != "null" and xda_thread.strip() != ""
     
-    if "Vanilla" in filename:
-        color = 0xffe7c4
-    else:
-        color = 0x2986cc
-    evo_org_tumbnail = f"https://raw.githubusercontent.com/Evolution-X/www_gitres/refs/heads/main/devices/images/{codename}.webp"
-    if requests.get(evo_org_tumbnail).status_code == 404:
-        thumbnail = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7DK6a--HvqADA_u3mGjXSVUvxxZ5sw3x9Sw&s"
-    else:
-        thumbnail = evo_org_tumbnail
+    message = f"""
+<b>New build available!</b>
+\U0001f4f2 \u2022 New build available for <b>{oem} {device}</b> ({codename})
+\U0001f464 \u2022 <b>By <a href="https://github.com/{github}">{maintainer}</a></b>
+
+\U0001f4e6 \u2022 <b>Version:</b> {version}
+\U0001f552 \u2022 <b>Build date:</b> {datetime.fromtimestamp(build_date).date()}
+\U0001f4ce \u2022 <b>Build size:</b> {humanize(file_size)}
+\U0001f517 \u2022 <b>MD5:</b> <code>{md5}</code>
+\U0001f517 \u2022 <b>SHA256:</b> <code>{sha256}</code>
+    """
+
+    parsed = urlparse(download_link)
+    base_url = f"{parsed.scheme}://{parsed.netloc}"
+
+    # Base inline keyboard buttons
+    inline_keyboard = [
+        [
+            {"text": "\U0001f5de\ufe0f Changelog \U0001f5de\ufe0f", "url": f"https://raw.githubusercontent.com/0xSoul24/OTA/{commit_hash}/changelogs/{codename}.txt"},
+            {"text": "\u2b07\ufe0f ROM \u2b07\ufe0f", "url": download_link}
+        ],
+        [
+            {"text": "\u262f KernelSU-Next \u262f", "url": f"{base_url}/KernelSU-Next.img"},
+            {"text": "\U0001F977 KernelSU-Next-SUSFS \U0001F977", "url": f"{base_url}/KernelSU-Next-SUSFS.img"}
+        ],
+        [
+            {"text": "\U0001f310 XDA Thread \U0001f310", "url": xda_thread}
+        ]
+    ]
+
+    # Dynamically generate buttons for each initial installation image
+    image_buttons = []
+    for image in initial_installation_images:
+        img_url = f"{base_url}/{image}.img"
+        image_buttons.append({"text": f"\u2b07\ufe0f {image} \u2b07\ufe0f", "url": img_url})
     
-    # Prepare main description
-    description = f"""
-            📲 • New build available for **{oem} {device}** ({codename})
-            👤 • **By [{maintainer}](https://github.com/{github})**\n
-            📦 • **Version**: {version}
-            🕒 • **Build date**: {datetime.fromtimestamp(build_date, tz=None).date()}
-            📎 • **Build size**: {humanize(file_size)}
-            🗞️ • **[Changelog](https://raw.githubusercontent.com/Evolution-X/OTA/{commit_hash}/changelogs/{codename}.txt)**
-            <:Evo:670530693985730570> • **Check [device's infos](https://evolution-x.org/devices/{codename}) directly on our website!**\n
-            
-            ⬇️ [Download link]({download_link}) ⬇️\n"""
+    # Insert image buttons as a new row in the keyboard
+    inline_keyboard.insert(1, image_buttons)
     
-    # Add XDA Thread section only if there's a valid link
-    if has_xda_thread:
-        description += f" \n🌐 [XDA Thread]({xda_thread}) 🌐"
-    
-    data = {
-        "embeds": [
-    {
-            "type": "rich",
-            "description": description,
-            "image": {
-                "url": "https://wiki.evolution-x.org/keepevolving.png"
-            },
-            "color": f"{color}",
-            "thumbnail": {
-                "url": f"{thumbnail}"
-                },
-            "author": {
-                "name": f"New build available !",
-                "icon_url": f"https://github.com/{github}.png"
-                },
-            "timestamp": datetime.now().isoformat(),
-            "footer": {
-                "text": "Evolution X",
-                "icon_url": "https://avatars.githubusercontent.com/u/165590896?s=200&v=4"
-            }}]
-    }
+    inline_keyboard_structure = {"inline_keyboard": inline_keyboard}
 
-    result = requests.post(webhook_url, json=data)
-
-    try:
-        result.raise_for_status()
-    except requests.exceptions.HTTPError as err:
-        print(err)
+    image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7DK6a--HvqADA_u3mGjXSVUvxxZ5sw3x9Sw&s"
+    image_response = requests.get(image_url)
+    if (image_response.status_code == 200):
+        image_file = BytesIO(image_response.content)
+        image_file.name = "keepevolving.png"
+        photo_url = f"https://api.telegram.org/bot{telegram_token}/sendPhoto"
+        payload = {
+            "chat_id": telegram_to,
+            "caption": message,
+            "parse_mode": "HTML",
+            "reply_markup": json.dumps(inline_keyboard_structure)
+        }
+        files = {"photo": image_file}
+        result = requests.post(photo_url, data=payload, files=files)
+        try:
+            result.raise_for_status()
+        except requests.exceptions.HTTPError as err:
+            print("Failed to send photo message:", err)
+        else:
+            print("Photo message delivered successfully, code {}.".format(result.status_code))
     else:
-        print("Payload delivered successfully, code {}.".format(result.status_code))
+        print("Failed to download the image.")
 
-
-webhook_send()
-
+telegram_send()
