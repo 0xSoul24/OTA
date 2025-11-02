@@ -1,0 +1,32 @@
+{
+  "response": [
+    {
+      "maintainer": "Cristhian Zeas (0xSoul)",
+      "currently_maintained": true,
+      "oem": "Google",
+      "device": "Pixel 4 XL",
+      "filename": "EvolutionX-16.0-20251031-coral-11.3-Unofficial.zip",
+      "download": "https://pub-2c4d2194db29481fb665c4328f7163e9.r2.dev/EvolutionX-16.0-20251031-coral-11.3-Unofficial.zip",
+      "timestamp": 1761944087,
+      "md5": "7da0228666d2eb698613f9da2c8280c5",
+      "sha256": "f7a9c65f658430a7db601d893e9b6b70cfa3922b12e6800001163fbd52a9b337",
+      "size": 2457405277,
+      "version": "11.3",
+      "buildtype": "user",
+      "forum": "https://xdaforums.com/t/rom-15-0-0_r5-unofficial-evolution-x-10-0-pixel-4-4-xl-12-09-2024-wireguard-kernelsu.4707107/#post-89845014",
+      "firmware": "https://dl.google.com/dl/android/aosp/coral-tp1a.221005.002.b2-factory-db99b1f8.zip",
+      "paypal": "https://PayPal.me/0xSoul",
+      "github": "0xSoul24",
+      "initial_installation_images": [
+        "boot",
+        "dtbo"
+      ],
+      "extra_images": [
+        "vbmeta",
+        "super_empty",
+        "KernelSU-Next",
+        "KernelSU-Next-SUSFS"
+      ]
+    }
+  ]
+}
