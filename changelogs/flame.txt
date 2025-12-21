@@ -11,27 +11,37 @@ Notes:
 
 Device changes:
 ==============================
-None
+floral: Kill deprecated/unneeded {board,product} flags
+floral: Roll Lineage specific makefiles/folders into main ones
+floral: Remove factory scripts & self-extractors
+floral: Drop hwasan support
+floral: Organize files into subdirectories
+floral: Drop incomplete automotive build support
+floral: Kill unused utils.mk
+floral: Drop AOSP build support
+floral: Switch to BOARD_VENDOR_SEPOLICY_DIRS
+floral: Pull all properties to *.prop and organize
+floral: Drop COMMON_LUNCH_CHOICES
+floral: Don't dex optimize SystemUI{,Google}
+floral: Organize and alphabetize makefiles
+floral: Drop dead includes/flags
+floral: Move sound trigger soong_config_set to product makefile
+floral: overlays: Cleanup
+floral: Explicitly declare source of blobs as EOL builds
+floral: Drop deprecated com.android.vndk.current.on_vendor
+Revert "Add .gitupstream"
+floral: Enable UFFD GC
+floral: Override kernel BPF version
+floral: Bump kernel BPF version override to 5.4.299
+floral: Correct coral-specific overlay path
+sched/headers: Move 'struct sched_param' out of uapi, to work around glibc/musl breakage
 
 Notable ROM changes:
 ==============================
-Evolver: Add sparkle pulse renderer style
-Evolver: Add support for custom fonts
-Evolver: Expose floating rotation button toggle
-Evolver: Remove preferences when not supported
-Introduce LMOSystemUIClock styles
-Merge November 2025 security patches
-Remove built-in keybox overlay
-Revert to previous refresh rate manager implementation
-SystemUI: Do not change compose panel anchor when shade blur is disabled
-SystemUI: Fix keyguard transition race conditions
-SystemUI: Prevent NPE when header view not ready
-SystemUI: Prevent ShadeListBuilder illegal state on notification dump
-build: Remove su
-config: Build LMO systemui clock plugin
-config: Update pihooks fp to A16 QPR2 Beta 3.2
-extras: Add IBM Plex Sans font
-extras: Add new oplus fp icon
-extras: UDFPS: import Keqing's icon and animation
-extras: Update configuration for sony sketch font
-services: Fixing fullscreen feature
+Dexpreopt pixel launcher
+New now playing QS tile and updated lockscreen UI
+Overlay: Update default wallpaper from Pixel 10 Pro XL
+overlay: Use google sans flex for lockscreen clock
+config: properties: Add pihooks default values
+component-overrides: Force disable various google components
+PixelPropsUtils: Update fingerprints to December 2025 release
