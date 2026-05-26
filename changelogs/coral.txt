@@ -13,131 +13,523 @@ Notes:
 
 Device changes:
 ==============================
-floral: Patch some blobs to depend on libtinyxml2-v34.so
-floral: overlay: Drop COLOR_MODE_AUTOMATIC
-floral: powerhint: Decrease launch boost to 3sec
-floral: Enable Lineage Health Fast charge control
-Revert "floral: Enable blurs"
-floral: overlay: Convert config_screenBrightnessDoze to float
-qcacld-3.0: Correcting the TSInfo structure size according to the Spec
-Revert "qcacld-3.0: Send assoc reject upon failing to post ASSOC_IND"
-BACKPORT: ANDROID: incremental fs: Evict inodes before freeing mount data
-UPSTREAM: bpf: Fix out of bounds access from invalid *_or_null type verification
-BACKPORT: net: sched: rename qdisc_destroy() to qdisc_put()
-UPSTREAM: net: core: netlink: add helper refcount dec and lock function
-UPSTREAM: net: Add rtnl_lock_killable()
-FROMGIT: media: venus: hfi: add a check to handle OOB in sfr region
-FROMGIT: media: venus: hfi: add check to handle incorrect queue size
-msm: npu: Fix use after free issue
-UPSTREAM: vsock/virtio: Initialization of the dangling pointer occurring in vsk->trans
-securemsm-kernel: Fix multiple listener registration on same fd
-msm: npu: Fix use after free issue
-UPSTREAM: binder: use cred instead of task for getsecid
-UPSTREAM: security: Add a cred_getsecid hook
-BACKPORT: file: let pick_file() tell caller it's done
-Regenerate makefiles
-Regen apks
-Patch some blobs to depend on libtinyxml2-v34.so
+floral: Kang pinner files for Android 16 from zuma
+floral: Remove fwk-detect lib from PRODUCT_PACKAGES
+floral: Allow to provide custom AVB keys and build an enabled vbmeta.img
+fixup! ANDROID: bpf: validate bpf_func when BPF_JIT is enabled with CFI
+Revert "arch: arm64: configs: floral/sunfish: Disable CFI"
+fixup! BACKPORT: cgroup: make per-cgroup pressure stall tracking configurable
 
 Notable ROM changes:
 ==============================
-ApplicationPackageManager: Drop tensor spoof prop
-BLASTBufferQueue: Add epoll_pwait2 fallback for older kernels
-Evolver: Bring back kill app through notification guts and compact heads up notifs
-Evolver: Drop tensor spoof
-Evolver: Implement Play Store spoofing
-Evolver: Kill only relevant processes on spoofing settings change
-Evolver: Show SystemUI restart dialog for required preferences
-LineageSettings: Allow disabling window blurs by default
-MediaCodec: Use proper surface when creating PersistentSurface
-Systemui: force black shade for black theme
-aconfig: Fix notification_background_tint_optimization filename
-audio: force IN_COMMUNICATION when routing calls to BT SCO
-fixup! Settings: doze brightness customization
-release: disable new dozing keyguard states
-Evolver: Implement automatic PIF property fetching
-MediaFocusControl: fixing media focus issues
-SystemUI: Fix PUBG max refresh rate issue
-SystemUI: fixing keyguard slice provider crashes
+Disable schedstats
+Evolver: Add three fingers swipe actions
+Evolver: Extend QS Header Image to support animated GIF/WEBP
+Evolver: Fix haptic options missing in QS category
+Evolver: Introduce shake gesture
+Fix reading build props on devices with legacy partition layout
+HWComposer: Silence duplicate VSYNC logspam
+PermissionController: Add missing permission groups
+SystemUI: Add charging bolt indicator for text-only battery style
+Settings: VolumeDialog: Add toggle for haptic feedback
+SystemUI: Fix QS customizer corner radius
+SystemUI: Fix edge light, media art, pulse on ambient display, now playing
+SystemUI: Fix imageloader spam in BrightnessSliderViewModel
+SystemUI: Fix wifi tile showing mobile data carrier name
+SystemUI: Move privacy indicator switches to statusbar tuner
+SystemUI: Move right logo in statusbar to extreme right
+SystemUI: Start QS header animation only on expanding
+SystemUI: Use privacy_chip_background for charger indicator bg
+Update CE storage handling in StorageManagerService (Fixes Android/data folder creation on some apps dues to race condition)
+Use proper value for default multi-media focus
+VolumeHaptics: Tune the primitives0
+audio: add message MSG_L_BT_ACTIVE_DEVICE_CHANGE_EXT to messageMutesMusic logic
+base: Use EFFECT_DOUBLE_CLICK for camera launch feedback
+config: Update pihooks default values
+keybox: add real vbmeta digest
+recovery: Add support for AIDL bootcontrol HAL in slot switch option
+recovery: Do not print switch slot info without actually switching a slot
+recovery: add support for changing slots
+recovery: rewrite slot switch logic using bootcontrol APIs
+services: Fixing per-app volume ux
+soong: Add CAMERA_NEEDS_CLIENT_INFO_LIB{_OPLUS} to select()
+soong: Add support for vendor tag with client package name to select
+surfaceflinger: Ignore when getLuts is unsupported
+surfaceflinger: Lower DisplayModeController log verbosity
+surfaceflinger: allow overriding FrameRateCategoryRateHigh
+surfaceflinger: allow overriding min supported frame rate
+Allow complex resource types to follow references
+Evolver: Add separate preference for statusbar clock bg chip
+Evolver: Add separate preference for statusbar logo
+Evolver: Bring back QS footer icon visibilities toggles
+Evolver: Bring back status bar clock position preference
+Evolver: Introduce charging effects 
+Evolver: Rewrite UDFPS icon picker and animations
+HintManagerService: Generate dummy mSupportInfo for non power AIDL devices
+KeyGestureController: Fallback to fullscreen screenshot on null data
+PersistentDataBlockService: Deactivate FRP on Vanilla builds
+Settings: Add missing icon for Adaptive connectivity
+Settings: Add support for daily and weekly data usage cycles
+Settings: BackgroundCheckSummary: use InstrumentedFragment to avoid NPE
+Settings: Fix custom Private DNS hostname being overwritten
+Settings: Reset mobile data always on developer setting correctly
+Settings: SoftAp: add support for setting shutdown timeout
+Settings: fix broken mobile network reset button
+SystemUI: Fix edge light, media art, pulse, charging, now playing on ambient display
+SystemUI: Hide mobile data tile when unsupported
+SystemUI: Hide nowplaying view when bouncer is showing
+SystemUI: Remove Duplicate Ripple Effect for WiredCharging
+SystemUI: logo: Re-align amogus icon
+aconfig: Enable enable_presentation_for_connected_displays
+base: Fix crash caused by back gesture on popup view
+extras: Update BCR to Version 2.4
+services: Clean up unused settings for three finger swipe
+services: Switch to binder IPC for three finger swipe
+Avoid NPE in CriticalEventLog.saveLogToFileNow()
+Evolver: Add gradients customization
+Evolver: Add ongoing action chip implementation
+Evolver: Bring back status bar clock position preference
+Evolver: Convert background clock chip fragment to preference dialog
+Evolver: Convert lockscreen clock font picker to preference dialog
+Evolver: Convert logo fragment to preference dialog
+Evolver: Convert system font picker to preference dialog
+Evolver: Disable gradient start/end colors for auto mode
+Evolver: Implement option to prevent OneSearchAimActivity from being disabled
+Evolver: Set height for custom selector preferences
+Merge March 2026 security patches
+PixelPropsUtils: Update fingerprints to March 2026 release
+Settings: Change UserBackupSettingsActivity to extend FragmentActivity
+Settings: Fix NPE in FingerprintSettings (UDFPS screen-off toggle)
+Settings: Set launch mode to singleTop for UserBackupSettingsActivity
+SettingsTheme: Correctly theming AlertDialog with M3 colors
+StorageManagerService: pre-create Android/media app dirs
+SystemUI: Add custom gradient start/end color support
+SystemUI: Add gradient for volume buttons along with slider
+SystemUI: Clean up legacy code in ongoing action progress chip
+SystemUI: Fix NPE in affectedByWorkProfileLock when entry is null
+SystemUI: Fix notification flicker with transluency enabled
+SystemUI: Improve Ongoing Chip interactions
+SystemUI: Redesign ongoing music chip like oneui music chip
+SystemUI: Redesign ongoing music chip popup
+SystemUI: Refactor ongoing action progress chip
+SystemUI: Retain compact mode for ongoing chip during visibility changes
+SystemUI: Rework media session helper for ongoing action progress chip
+SystemUI: Rewrite stale progress check
+SystemUI: Use proper media buttons for ongoing action chip and theme it
+SystemUI: Use squiggle for seekbar in ongoing progress media panel
+VibratorInfo: Don't log error when frequency profile is absent
+base: Add method to restart SystemUI
+extras: Add more UDFPS icons
+extras: Bring back fonts and clock fonts
+extras: Update BCR to Version 2.4
+fixup! audio: Allow opting out of speaker_layout_channel_mask field
+version: Uprev to 11.6.2
+vold: fix Android/media app dir ACLs and revert 777 mode
+ColumbusService: Import Vietnamese localization
+ColumbusService: Update lottie animation
+ColumbusService: Updated the RU translation
+Evolver: Add color modes for music chip bg
+SystemUI: Apply fading edge only when text overflows chip width
+SystemUI: Clean up track counter for album art change
+SystemUI: Clean up unused currentAppLabel in ongoing action chip
+SystemUI: Color mode perf improvements for music chip bg
+SystemUI: Fix media info jitters in ongoing action media panel
+SystemUI: Fix visual bug with notif progress in ongoing action chip
+SystemUI: Refetch album art if required
+SystemUI: Use statusbar text size for ongoing chip text
+ColumbusService: Make Vietnamese translations more natural
+Evolver: Update team members
+Settings: hide ambient from search
+Settings: location: Move mock location app picker to Location settings
+Settings: location: greyed-out mock override toggle until app is selected
+Skip updating value added A2DP offload codecs to MM audio over AIDL
+SystemUI: Do not collapse when interacting with seekbar
+SystemUI: Do not invalidate ongoing chip bg color often
+SystemUI: Fix NPE in ongoing chip icon rasterization
+SystemUI: Fix ringer tile rendering for vibrator support and DND state
+SystemUI: Improve music chip popup ui
+SystemUI: Periodically re-evaluate to catch stale sessions
+SystemUI: Refactor for album art, icon and playback
+SystemUI: Smoother seekbar for ongoing chip popup ui
+SystemUI: Update chip max width
+Update EGL context type from EGLDisplay to EGLContext
+fixup! audio: Allow opting out of speaker_layout_channel_mask field
+system_server LW_EVENT_SYNC_NATIVE_CRASH in InputDispatcher
+wifi: Clear user temporarily disabled list on forget connected network
+AppOpsService: treat empty attribution tags as absent
+CameraProviderManager: ignore torch callbacks for flashless cameras
+Evolver: Add Idle manager resources
+Evolver: Add option for PairIP license check blocker
+Evolver: Add support custom color for clock chip
+Evolver: Add transparent mask clock mode for gradient chip
+Evolver: Allow toggle to kill Flash SMS messages
+Evolver: Bring back Lockscreen Weather
+Evolver: Implement DeviceConfigSwitchPreference
+Evolver: Introduce Clock face feature
+Evolver: Introduce custom spoof device support in per-apps spoofing
+Evolver: Introduce per-apps spoofing
+Evolver: Refactor per-app spoof UI
+Evolver: Remove alert slider notifications
+InsetsController: skip redundant hide(ime()) tracking
+KeyboxImitationHooks: Abandon generated certs
+Settings: Add config to display Now Playing
+Settings: Add toggle for face down detection
+Settings: Add torch toggle for double tap power gesture
+Settings: Guard against detached fragment context in hide dev settings
+Settings: Implement Idevice idle manager
+SystemUI: Add interaction boost for QS/shade animations
+SystemUI: Disable smartspace default view
+SystemUI: Fix flashlight QS direct-expand slider initialization
+SystemUI: Fix flashlight slider re-enable from 0 level
+SystemUI: Hide ongoing action chip while QS panel is expanded
+SystemUI: Make the new vertical flashlight slider compatible with the old FlashlightController implementation
+SystemUI: Update smartspace to CP1A.260305.018
+SystemUI: clear stale LogAccessDialog timeouts
+SystemUI: hide ticks on flashlight slider
+SystemUI: honor hidden FGS manager packages
+SystemUI: keep Wi-Fi QS tile subtitle Wi-Fi-specific
+aconfig: Enable flashlight strength tile supportaconfig: Enable flashlight strength tile support
+base: Empty accessibility service list when hiding app list
+config: Enable OmniJaws service
+core: Add OmniJawsClient
+extras: Build overlays for hiding clock and smartspace
+extras: Don't include prebuilt spoof
+Evolver: Add classic QS panel style for tiles
+Evolver: Add ongoing chip opacity control
+Evolver: Allow clean idle manager stats
+Evolver: Introduce cutout progress ring
+Evolver: Refactor idle manager
+Fix PlanesLockGuard buffer lock leak
+Fix PlanesLockGuard copy-assignment delete type
+Fix PlanesLockGuard::getStatus() return type
+Reland "pixel-style: config: Update SystemUIGXOverlay package name"
+StrictMode triggers a watchdog
+SystemUI: Add background to ongoing progress chip
+SystemUI: Allow disable statusbar combined signal
+SystemUI: Fix flashlight not available on boot
+audio: fix direct byte buffer not release
+config: Spoof BuildFingerprint as Pixel Beta
+config: Update pihooks to Android 17 Beta 3
+prebuilt_etc: Add prebuilt_addon_d module
+extras: Bring back Accord
+overlay: Use google-sans-text for regular font
+pixel-style: Update GlanceableHub overlays
+sepolicy: Allow perf HAL to access proc_sched as well
+Evolver: Add AxThemeStore shortcut
+Evolver: Adding statusbar dynamic bar
+Evolver: Allow toggle waveform seekbar
+Evolver: Allow user to turn off vbmeta digest update
+Evolver: Bring back toggle for Tensor feature override
+Evolver: Introduce nowplaying music dialog
+Evolver: fix crash in hideapplist
+LMOFreeform: Prefer highest refresh rate display mode
+LMOFreeform: Use max supported refresh rate for freeform windows
+Settings: Observe auto brightness mode changes
+System: Switch Tensor feature handling to user-controlled override
+aconfig: bp4a: Enable UI affordances to put other content into a bubble
+core: Align Watchdog native dumps with crash_dump policy
+core: Avoid DeadSystemException recursion when dropbox is unavailable
+core: Dynamically inject Tensor features for Play Store compatibility
+extras: fonts: Add Recursive font
+Adapt dynamic resolution in nuplayer with enable sample aspect ratio parameter
+Evolver: Add lock screen toggles for lock screen dynamic bar
+Evolver: Add more classic icon shapes
+Evolver: Add proper toggle for smartspace
+Evolver: Allow disable qs media player
+Evolver: Toggle to launch notification apps in bubble
+Fix the issue of digital jitter during the countdown when using "PIN" for lock screen unlocking
+Fixed the issue where settings_secure.xml.fallback fails to generate in scenarios involving dual instances of the app
+IconProvider: fix crash when resource is missing
+MediaRouterService: fix A2DP incorrectly suppressed on USB disconnect
+Merge April 2026 security patches
+Switch to AxionOS spoof implementation (custom rom hide/trickystore/game spoof)
+SystemUI: Add more classic icon shapes
+SystemUI: Fix NotificationMenuRow crash on theme switch
+Update GameSpace
 Update translations
-fixup! Camera: Allow setting fallback physical ID for logical camera
-fixup! build: Override host metadata
-fixup! fixing force full screen feature
-gms: Build pixel experience XMLs only for their respective model years (fixes battery drain)
-lineage-sdk: fixing force full screen feature
-release: Disable media_carousel_arrows flag
-sepolicy: fixing dex2oat denials
-LMOFreeform: Refactor touch scaling to use MotionEvent transform
-Settings: Do not rely on androidx.preference_preference-ktx
-Settings: Remove flag check for blur toggle
-bpfloader: Allow overriding kernel version
-bionic: Fix align usage for fast lookup hosts file data
-bionic: Sort and cache hosts file data for fast lookup
-bionic: Support wildcards in cached hosts file
-extras: Remove preference_preference-ktx library prebuilt
-getaddrinfo: Use Cloudflare DNS instead of Google DNS
-iconloaderlib: Update themed icons color palette
-nativedisplay: fix the flicker issue in streaming video
-netbpfload: Relax kernel version requirement
-sidebar: Update sidebar default customization values
-soong: Allow various path commands
-PixelPropsUtils: Enable tensor features for new Pixel prebuilts
-Settings: Adapt Google battery saver changes to A16 QPR2
-SystemUI: Apply tile shape customization to Ringer Slider
-SystemUI: update ringer tile background color
-fixup! SystemUI: VolumeDialog: Fix layout issues with left gravity
-Merge February 2026 security patches
-version: Uprev to 11.6.1
-EdgeLight: Make it work independent of ambient display notifications
-Evolver: Re-enable Edge light feature
-MediaArt: Allow lockscreen media art on landscape
-MediaArt: Improve updates logic for MediaSessionManager
-MediaArt: Register tunable for all users
-PixelPropsUtils: Update fingerprints to February 2026 release
-Rework Refresh rate impl and bring back extreme refresh rate
-SettingsProvider: Fix NPE when upgrading
-SmartSpace: Mark strings as non-translatable
-SystemUI: Allow ambient wallpaper on pulsing
-SystemUI: Prevent indicator text cutting off in biometric prompt
-SystemUI: TunerActivity: Remove vibrate icon if not supported
-base: Allow tuning app switch key regardless hw key
-base: Use SingleKeyRule for assist long press
-use shared bitmaps in MediaMetadata to avoid Binder failures
-wm: Only close system dialogs for visible windows
-AconfigFlags: silence missing packages spam
-ChargingControl: Show notification if device is charging
-Evolver: Add Flashlight blink on incoming calls
-Evolver: Bring back some power menu customization
-Evolver: Get rid of BT dialog toggle
-Evolver: Statusbar clock background chip styles
-Fix NavBar haptic feedback after Bluetooth device disconnect
-Fix boot race in NotificationManagerService
-Fix check for pinned shortcut in ShortcutRequestPinProcessor
-Fix crash with protected content with ElectronBeam/Scale screen-off animation
-ProgressIndicator: format code
-Pulse: fix crash
-Settings: Add icon for WEP in wifi network settings
-Settings: Add icon for emergency broadcasts
-Settings: Hide back haptics setting if not supported
-Settings: support per-app volume
-SettingsLib: shrink 4g+ icon
-SettingsState: downgrade flags spam to warning
-SystemUI: Adapt refresh rate tile for new A16 QS
-SystemUI: Add toggle for media squiggle animation
-SystemUI: Allow toggling privacy indicators [1/2]
-SystemUI: Do not set white only for outline bg clock styles
-SystemUI: Kill old privacy indicator icons completely
-SystemUI: On-The-Go Mode (1/2)
-SystemUI: QS: Add On-The-Go Tile
-SystemUI: Statusbar clock background chip styles [1/2]
-SystemUI: fix roaming icon
-aconfig: Enable eyedropper
-base: Add DND & Rate settings to flash on call [1/3]
-base: Add Flashlight blink on incoming calls [1/3]
-base: make per-app work with multi audio focus
-base: support per-app volume [2/3]
-fixup! Statusbar clock customizations
-fwb: Screen off animations [1/2]
-fwb: stop performance hint spam
-sepolicy: Add rules to allow powerhal accessing IStates AIDL
-sepolicy: libperfmgr: Grant access to IStats service for metrics
+bluetooth: Fix avrcp disconnect/connect issue
+bouncycastle: adding more providers for trickystore port
+config: Inherit Mosey impl
+core: Harden DeadSystem paths for optional services
+extras: Bring back Accord
+extras: Import ax_compose sdk
+fix StrictMode BackgroundActivityLaunchCallback leak
+sepolicy: Add mosey_app to compat mapping
+sepolicy: Enhance vold_prepare_subdirs for media storage
+sepolicy: Remove obsolete treble sepolicy tests
+soong: Fix 'date' command options
+soong: overriding lineage namespace
+vendor: drop default PIF values
+wifi: Accept operating environment values 0x01-0x06 in Country IE
+wifi: ClientModeImpl: Move updateCurrentConnectionInfo() before broadcast
+wifi: Fix Transition Disble in WifiUriParser
+Add hooks for custom rom hide
+Change UserBackupSettingsActivity to extend FragmentActivity
+Evolver: Allow change notification bg color
+Evolver: Bring back ongoing progress chip
+Evolver: Bring back cutout progress ring
+Evolver: Rework spoofing features (use AxionOS impl)
+Evolver: add new clocks
+Evolver: notification app icon
+LineageParts: Replace fragment-wide listeners where possible
+LineageParts: Simplify some prefs summary handling with SummaryProvider
+LineageParts: StatusBarSettings: Set dependencies of QS brightness slider preference
+PixelPropsUtils: Drop Meizu spoof
+PixelPropsUtils: Drop PIF spoofing
+PixelPropsUtils: Update fingerprints to April 2026 release
+Set launch mode to singleTop for UserBackupSettingsActivity
+Settings: Fix NPE in UserBackupSettingsActivity due to missing setContentView
+Settings: Introduce automated Sleep Mode
+Settings: ProfileSelectFragment: Refactor getTabId to getStartingTabIndex
+SystemUI: Add Glow effect in notch ring
+SystemUI: Add new OOS clock
+SystemUI: DynamicBar: Fix chip dismiss issue
+SystemUI: DynamicBar: Improve battery icon with rounded corners and proper nub
+SystemUI: DynamicBar: Improve chip padding and size
+SystemUI: DynamicBar: Redesign media pill style
+SystemUI: Fix media album art not updating on track change in ongoing chip
+SystemUI: Fix QS classic tile style jitter during panel expansion
+SystemUI: Fix qs tile font variable
+SystemUI: Improve statusbar logo padding
+SystemUI: Update sleep mode QS tile
+[ax_custom_rom_hide] blocking untrusted app lineage service checks
+[ax_custom_rom_hide] overriding lineage namespace
+base: Always turn on sensors when disabling sleep mode
+base: Migrate to MaterialExpressiveTheme
+bootstat: Use Health HAL to retrieve battery level
+config: Add Mosey nopauth variant selection flag
+core: Adding omnijaws front end hooks
+custom_rom_hide: harden pointer validation across all entry points
+fixup! Adding dynamic font feature
+gms: Update from mustang BP4A.260205.001
+init: Prioritize bpfloader and netd startup during post-fs-data
+init.rc: fix SELinux label regression on dirty flash for adb spoofing dirs
+release: Disable redesign notification font
+release: Enable notification themed icon [Experimental]
+sepolicy: Allow perf HAL to access proc_sched as well
+sepolicy: Restrict build version props
+sepolicy: Restrict pixel props usage
+services: Fix sleep mode service initialization
+vold: Fix binder thread starvation in dump
+BLASTBufferQueue: Prevent repeated redundant syscalls
+Evolver: Add Depth wallpaper settings
+Evolver: Add Essential Apps preference
+Evolver: Add pref screens for game spoof, PIF and trickstore
+Evolver: Add steps for PIF and TrickyStore
+Evolver: Add wallpaper visual effects
+Evolver: Allow toggle single tone QS background
+Evolver: Ambient display show battery & cpu temperature
+Evolver: Drop nothing charging animation
+Evolver: Fix info preferences clipping
+Evolver: Fix potential crashes in HideAppListSettings
+Evolver: General cleanup and refactoring
+Evolver: Implement wallpaper styles
+Evolver: Improve dynamic bar guide steps layout
+Evolver: Introduce Lock glymps
+Evolver: Move custom font selection into FontsPickerPreference
+Evolver: Move trickystore, pif and game props spoof
+Evolver: Remove compact chip toggle for dynamic bar
+Evolver: Show username in ambient indicator
+Evolver: TrickyStore: restore target mode from disk on fragment resume
+Evolver: Video Wallpaper selector
+LineageParts: Add an option to take screenshot using hw keys
+Settings: Consolidate HideDeveloperStatus to reuse HideAppList resources
+SystemUI: Adapt platform hooks for dynamic bar usage only
+SystemUI: Add quicklook client
+SystemUI: Adding platform hooks
+SystemUIClocks: Update to mustang BP4A.260205.001SystemUIClocks: Update to mustang BP4A.260205.001
+ThemeIcons: Drop com.android.camera overlay
+Updater: fix NPE when update is not found in controller
+config: Build AxQuickLook service
+core: Fix json parsing non-string values in PIF
+core: Move trickystore, pif and game props spoof
+core: ThemeUtils: consolidate android and evolution variants
+core: pif: skip SDK_INT spoofing for vending process
+fonts: Update google sans flex fonts
+init: Move trickystore, pif and game props spoof
+iwlan: Fix VoLTE not reconnecting after VoWiFi handover
+sepolicy: Move trickystore, pif and game props spoof
+threadnetwork: Allow overriding apex init_rc
+Evolver: About: Add OTA-backed current maintainers section
+Evolver: Add Google Wallet to TrickyStore auto-select list
+Evolver: Add auto-select button for tricky store apps list
+Evolver: Add canary channel selection for pif
+Evolver: Add dynamic bar event for ongoing calls
+Evolver: BootAnimation: fix Google previews, hide on Pixel devices
+Evolver: Changelog: Rework with Activity
+Evolver: Fix spoofing structure
+Evolver: TrickyStore: Add security patch date management
+Evolver: VideoWallpaper: Handle storage locked state
+Settings: New logo style
+Settings: Refactor OEM/device name formatting into shared utility
+Settings: Refactor hardware info into unified card UI with OTA-backed data
+SystemUI: Adapt Bottomsheet USB dialog
+SystemUI: ClockStyle: consolidate and sync with upstream improvements
+SystemUI: DynamicBar: Add separate card for active calls
+SystemUI: DynamicBar: Fix chip dismiss issue
+SystemUI: DynamicBar: Make music chip bg more vibrant
+SystemUI: Improve notification panel boost
+SystemUI: Match circle battery style colors with landscape icon
+SystemUI: use realtime values for lockscreen charging stats
+config: Spoof BuildFingerprint as Pixel Beta
+core: Fix and remove deprecated api in certificate generator
+core: Fix spoofing structure
+core: Improve parsing keybox xml with StringBuilder
+core: PIF: Align spoofing behavior with upstream
+core: Sanitize keybox xml before loading
+core: Upgrading to m3e animation specs
+libs: Reducing redundant surface animation processing
+version: Uprev to 11.6.4
+Evolver: BootAnimation: Compose rewrite with M3 Expressive UI
+Evolver: Cleanup and preference UI consistency
+Evolver: Consolidate per-app and game spoofing UI
+Evolver: PIF: Overhaul config handling and add auto-fetch
+Evolver: Replace HideAppListSettings with HideDeveloperStatusSettings
+Evolver: Rewrite Sensor Block as Compose UI
+Evolver: TrickyStore: Rework attestation controls and per-app mode picker
+GamePropsSpoofService: absorb PerAppsPropsUtils
+GameSpace: Remove deprecated notification method
+Settings: Logo: Add animated RGB glow; static outline on light theme
+Settings: ProfileSelectFragment: add clarifying comment about UserHandle#myUserId
+Settings: ProfileSelectFragment: backport 16 QPR3 changes
+Settings: ProfileSelectFragment: stop assuming tab id == tab index
+SurfaceFlinger: add isLayerCommandBatchingEnabled to Composer classes
+SurfaceFlinger: destroy Pixel HWC external display layers on disconnect if command batching
+SurfaceFlinger: fix outdated test expectation on Pixels due to HDCP
+SystemUI: Adding TaskWorkerManager
+SystemUI: Apply wifi and signal icon styles last
+SystemUI: Backport CP1A fix for getBubblePackageForLogging crash
+SystemUI: Caching tile viewmodels across qs fling
+SystemUI: Debouncing notification fade layer changes during fling
+SystemUI: Debouncing wallpaper color extraction on shade dim
+SystemUI: Deferring trimmemory on shade collapse
+SystemUI: DynamicBar: Clean up ux | animations enhance
+SystemUI: DynamicBar: Fix expanded content overlap with qs
+SystemUI: DynamicBar: Fix media update issue
+SystemUI: DynamicBar: Fix recorder | notification issues
+SystemUI: DynamicBar: Fix sb expanded content issue
+SystemUI: DynamicBar: Refine charging chip layout and parsing logic
+SystemUI: DynamicBar: Stabilize and clean up charging info formatting
+SystemUI: Fix empty date issue
+SystemUI: Fixing shade gc handler leak and premature gc
+SystemUI: Shade gc and traversal last
+SystemUI: Throttling notification stack height remeasure during fling
+SystemUI: Use binder-backed UVC support checks
+TelephonyRegistry: Harden carrier roaming NTN notifications
+Update translations
+bionic: hardcode custom rom hide app white list
+config: Build AxSandbox
+core: Adding sandbox support
+core: Declare the VCN attribution tag
+core: Fixing spoofing issues
+core: FontController: Skip variable font role override for Google Sans Flex
+core: HideDeveloperStatusUtils: clean up and modernize
+core: Skip missing aconfigd sockets
+core: Traversal last, skip relayout and hide by cache
+init: clean up data/adb crufts
+init: strengthen spoofing and add debug toggle
+sepolicy: Add sandbox rules
+sepolicy: remove tests to ease of sepolicy addition maintenance
+services: Fix launcher/recents entering bubble mode
+services: Fixing bt device enabling mouse input issue
+services: Reducing hinge angle sensor polling from 1000hz to normal
+services: Reducing foldable sensor polling rate
+services: Skipping redundant posture estimation callbacks
+services: Throttling user activity binder calls
+telephony: SatelliteController: Harden carrier roaming NTN notifications
+telephony: SatelliteController: Make NTN nullness explicit
+telephony: services: Avoid exception-driven invalid subId user handles
+telephony: services: Cache unsupported N1 mode responses
+telephony: services: Sanitize invalid physical cell IDs from RIL
+version: Uprev to 11.7
+Evolver: Add animation styles for QS tile toggle
+Evolver: Add edge light preview
+Evolver: Add particle and waveform renderer styles
+Evolver: Add subtle haptics on bass spikes
+Evolver: Allow configure bass haptics playback for pulse
+Evolver: Consolidate, clean up, and reorganize our strings
+Evolver: Misc: Overhaul app picker screens and consolidate shared UI
+Evolver: Misc cleanup and UI consistency fixes
+Evolver: PlayIntegrityFix: overhaul config handling, auto-fetch, and import guards
+Evolver: Spoofing: Restructure screen layout and clarify strings
+Evolver: TrickyStore: Add keybox revocation status check
+Merge May 2026 security patches
+Settings: Extract OEM/device name formatting into shared utility
+Settings: Fix capitalization, grammar, and wording in our strings
+Settings: Hardware info: Rework as unified card UI with OTA-backed data
+AppLocker: fixing applocker activity lifecycle issues
+Fix hidden AP remove WifiEntry during connection
+Evolver: Add 2 colon clocks
+Evolver: Add custom clock aod transition
+Evolver: Add emoji styles
+Evolver: Add seekbar navigation to clock preview
+Evolver: Add sound preview to lock/unlock sound picker
+Evolver: Add swiftui and facebook emoji
+Evolver: Allow change media player position
+Evolver: Allow switching QS tile color to pre-qpr shade
+Evolver: Drop charging animation changes
+Evolver: Implement custom color support for pulse
+Evolver: Introduce {Global,Secure,System}PrimarySwitchPreference
+Evolver: Introduce new iOS like clock styles
+Evolver: Introduce quicksettings widget
+Evolver: Reduce clock opacity min value to 0
+Evolver: Refactor Lockscreen Media art
+Evolver: Show dynamic summaries for applicable preferences
+Fix system_server deadlock between DisplayManagerService and ExternalDisplayStatsService
+InputMethodManagerService: retry IME show after dummy editor handoff
+MediaSync: fix nullptr dereference in onAbandoned_l on output death
+MediaSync: fix nullptr dereference when detachNextBuffer fails
+MediaSync: remove InputListener death recipient dead code
+Reduce blocking operation on display thread
+Sandbox: fixing auth activity lifecycle issues
+Settings: display: gate display engine category on persist prop
+Settings: fix udfps | skip button overlap issue
+SystemUI: Add 2 colon clocks
+SystemUI: Add back gesture, charging anim, battery themes support
+SystemUI: Add custom color, height control, and ambient mode support in pulse
+SystemUI: Apply gradient theming to QS widget panel sliders
+SystemUI: Apply wifi and signal icon styles last
+SystemUI: DynamicBar: Hide depth wallpaper when keyguard panel visible
+SystemUI: Fade out depth wallpaper fade out smoothly
+SystemUI: Fix QS widget brightness slider jumping after hold trigger
+SystemUI: Fix notification app lock issues
+SystemUI: Fix pulse and media art overlap
+SystemUI: Refactor Lockscreen Media art
+SystemUI: Restore launch and routing functionality for QS widgets
+SystemUI: Simplify depth wallpaper loading by removing dimming overlay
+SystemUI: charging: harden charging ripple cleanup against stale callbacks
+SystemUI: fix platform hooks regressions
+ThemeStore: fixing scaffold|top app bar issues
+Update BCR to Version v2.10
+backport fix for stuck IME input from May 2026 Pixel update
+build: Adding 8gb/12gb/16gb dalvik heap configs
+build: Fixing dalvik|art|usap tuning regressions
+build: Optimizing dalvik heap configs for lower ram tiers
+config: gate display engine category on persist prop
+disable CLOSE_QUIC_CONNECTION power optimization that bypasses VPN
+imm: guard stale IME target hide against concurrent show request
+keeping expensive rendering across blur cache hits
+sandbox: Adding secure file vault support
+sepolicy: adding usap pool rules
+services: Allow early null AxSandbox manager lookups
+services: Caching isOverlappingWithNavBar to avoid redundant rectangle math
+services: Disabling dma buff stats pull
+services: Skipping atom stats pulling on none eng builds
+services: Optimizing letterbox updates
+services: Optimizing navigation bar draws
+services: Optimizing redundant status bar top hide checks
+services: Optimizing wallpaper controller traversals
+services: Optimizing wallpaper zoom
+services: Optimizing window rounded corners updates
+services: Optimizing wms prop | settings reads
+services: optimizing sandbox call sites
+sidebar: Implement configurable slider width
+sidebar: Implement configurable swipe-to-open gesture for sidebar
+sidebar: Implement gesture setting to open sidebar drawer on tap
+sidebar: Integrate GameSpace awareness and auto-hide support
+sidebar: Refactor customization into standalone activity
+sidebar: Refactor settings navigation using NavController
+sidebar: Replace custom drawer icons with Material Icons
+sidebar: permissions: allowlist MANAGE_GAME_MODE for LMOFreeformSidebar
+themes: Add back gesture | charging anim themes
+wifi_chip: Reduce legacy Wi-Fi HAL startup noise
