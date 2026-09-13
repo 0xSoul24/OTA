@@ -1,0 +1,68 @@
+This is Android 17 QPR0 with September 2026 security patches
+
+CAUTION!!! DIRTY FLASH FROM ANDROID 16
+MAKE A BACKUP NOW IF YOU WANT TO MOVE TO THIS BUILD
+
+Notes:
+==============================
+- LineageOS-based source. Signed build.
+- Always dirty flash at your own risk. If your device bootloops, revert to an older build that boots.
+- Includes Google camera.
+- You can install any root method you prefer. A pre-rooted image is also provided
+  separately at https://pub-1fea78200a69436a899688f89c45e0e3.r2.dev/ReSukiSU.img.
+
+Device changes:
+==============================
+Device tree / HALs:
+- Import powerstats from hardware/google/pixel and thin down the powerstats HAL
+- vibrator: Import PixelVibratorCommon from hardware/google/pixel
+- Enable fastbootd by default
+- Stop disabling configstore and switch back to the legacy libion implementation
+- Drop the UFFD flag
+- Convert the chre board flag to soong_config_set_bool and update included soong namespaces
+
+SELinux:
+- coral: Remove implicit rules and deduplicate per_boot_file
+- Allow hal_camera_default to read persist_drm_file
+- Allow hal_health_storage_default to read sysfs_typec
+
+Kernel build:
+- Build the kernel entirely with Clang/LLVM: drop the GCC toolchain along with the
+  now unused TARGET_COMPILE_WITH_MSM_KERNEL and TARGET_KERNEL_NO_GCC flags
+- Default to LLVM_IAS=1, infer --target from ARCH and drop --gcc-toolchain
+- Fix a large batch of compiler warnings (qcacld-3.0, techpack audio wcd_cpe,
+  msm vidc/cvp, dsi display) and prefix header search paths with $(srctree)/
+- Restore the previous module signing setup (SHA-1/sha224 and OpenSSL CMS reverts)
+  and drop PKCS#11 support when building against BoringSSL
+- Regenerate defconfigs (make savedefconfig)
+
+Storage (EROFS):
+- Enable CONFIG_EROFS_FS=y with per-CPU high priority decompression kthreads
+- Import big pcluster support, on-disk compression configurations and the
+  updated LZ4 decompressor with in-place decompression support
+- Pull in the full upstream EROFS backlog: use-after-free, overflow, EOF and
+  LZ4 in-place decompression fixes, plus sync-up with kernel 5.10
+
+Memory debugging (KFENCE):
+- Enable KFENCE with a 500ms sample interval and a reduced pool size
+- Backport the complete KFENCE infrastructure for arm64/x86 including SLAB/SLUB
+  hooks, KASAN compatibility, test suite and documentation
+
+Checkpoint/restore and clone3():
+- Wire up the clone3() syscall with CLONE_PIDFD, CLONE_CLEAR_SIGHAND and set_tid
+- Introduce CAP_CHECKPOINT_RESTORE and use it for ns_last_pid, set_tid,
+  map_files access, /proc/self/exe and TIOCSLCKTRMIOS
+
+Fixes:
+- tipc: Fix a double-free in tipc_buf_append() and enforce a valid ratio between
+  skb truesize and contents
+- nfc: llcp: Add a missing return after LLCP_CLOSED checks
+- tcp: Fix incorrect __user annotations in the sysctl handlers
+- locking/rtmutex: Skip remove_waiter() when the waiter is not enqueued
+- Enable CONFIG_HIDRAW to satisfy FCM 7 requirements
+- Increase KSYM_NAME_LEN, drop coresight references from the DTS and clean up
+  assorted dead code (duplicated declarations, blktrace, fault_inject)
+
+Notable ROM changes:
+==============================
+Initial Android 17 release
