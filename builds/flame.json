@@ -24,8 +24,7 @@
       "extra_images": [
         "vbmeta",
         "super_empty",
-        "KernelSU-Next",
-        "KernelSU-Next-SUSFS"
+        "ReSukiSU"
       ]
     }
   ]
