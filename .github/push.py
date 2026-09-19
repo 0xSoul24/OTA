@@ -80,7 +80,8 @@ def telegram_send():
             {"text": "\u2b07\ufe0f ROM \u2b07\ufe0f", "url": download_link}
         ],
         [
-            {"text": "\u262f ReSukiSU \u262f", "url": f"{base_url}/ReSukiSU.img"}
+            {"text": "\u262f ReSukiSU \u262f", "url": f"{base_url}/ReSukiSU.img"},
+            {"text": "\U0001F977 ReSukiSU-SUSFS \U0001F977", "url": f"{base_url}/ReSukiSU-SUSFS.img"}
         ],
         [
             {"text": "\U0001f310 XDA Thread \U0001f310", "url": xda_thread}
