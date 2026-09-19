@@ -5,12 +5,12 @@
       "currently_maintained": true,
       "oem": "Google",
       "device": "Pixel 4",
-      "filename": "EvolutionX-17.0-20260911-flame-12.2-Unofficial.zip",
-      "download": "https://sourceforge.net/projects/your_unoffical_sourceforge_project/files/flame/17/EvolutionX-17.0-20260911-flame-12.2-Unofficial.zip/download",
-      "timestamp": 1789187822,
-      "md5": "fd0e90d383afee9fd7b807de6d174c64",
-      "sha256": "09b3e780d0e314be22a74a366546868e361909c1dc8524bc79cb6d711ff07b19",
-      "size": 2950333387,
+      "filename": "EvolutionX-17.0-20260918-flame-12.2-Unofficial.zip",
+      "download": "https://pub-1fea78200a69436a899688f89c45e0e3.r2.dev/EvolutionX-17.0-20260918-flame-12.2-Unofficial.zip",
+      "timestamp": 1789772999,
+      "md5": "8deab66f884e3420694c7653bee542e8",
+      "sha256": "7d84245ffe665b3ffef66809b28dacf446de988bdcade6c0332b29c1f222e170",
+      "size": 2957934990,
       "version": "12.2",
       "buildtype": "user",
       "forum": "https://xdaforums.com/t/rom-15-0-0_r5-unofficial-evolution-x-10-0-pixel-4-4-xl-12-09-2024-wireguard-kernelsu.4707120/",
@@ -24,7 +24,8 @@
       "extra_images": [
         "vbmeta",
         "super_empty",
-        "ReSukiSU"
+        "ReSukiSU",
+        "ReSukiSU-SUSFS"
       ]
     }
   ]
